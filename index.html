@@ -6,28 +6,42 @@
     
     <title>Podcastless</title>
     <style>
+        @font-face {
+            font-family: 'AndaleMonoMTStd';
+            src: url('./assets/fonts/AndaleMonomTStd-Bold.otf');
+        }
         * { margin: 0; padding: 0; }
+        
         html {
             height: 100vh;
             width: 100vw;
         }
 
         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
             background-color: black;
+            color: white;
+            font-family: 'AndaleMonoMTStd';
             
             height: 100%;
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         img {
-            max-height: 50%;
+            max-height: 30%;
+        }
+
+        h2 {
+            margin-block-start: 1em;
         }
     </style>
 </head>
 <body>
-    <img src="./assets/img/logo.png" alt="Podcastless">
+    <img src="./assets/img/logo.svg" alt="Podcastless">
+    <h2>coming soon…</h2>
 </body>
 </html>
