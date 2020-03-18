@@ -43,10 +43,9 @@ jobs:
       - run: npm start -- generate
         env:
           CI: true
-      - uses: cryzy-max/ghaction-github-pages@v1
+      - uses: tsunematsu21/actions-publish-gh-pages@v1.0.0
         if: success()
         with:
-          target_branch: gh-pages
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          dir: dist
+          branch: gh-pages
+          token: ${{ secrets.GH_TOKEN }}
