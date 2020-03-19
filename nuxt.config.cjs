@@ -2,7 +2,6 @@ console.log('Loading Nuxt Configuration file');
 
 module.exports = {
     rootDir: process.cwd(),
-    mode: 'spa',
     header: {
         title: 'Podcastless',
         meta: [
