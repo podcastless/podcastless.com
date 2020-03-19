@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm start -- generate
+      - run: npm start -- generate -c nuxt.config.cjs
         env:
           CI: true
       - run: cp CNAME dist/CNAME

@@ -13,8 +13,7 @@ test.before(async ({ context }) => {
 
     const config = {
         ...await import(resolve(rootDir, 'nuxt.config.cjs')),
-        config: false,
-        config: 'universal'
+        mode: 'spa'
     };
 
     context.server = new Nuxt(config);
