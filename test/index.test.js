@@ -10,10 +10,11 @@ const { JSDOM } = jsdom;
 // Init Nuxt.js and create a server listening on localhost:4000
 test.before(async ({ context }) => {
     const rootDir = process.cwd();
+    const { default: fileConfig } = await import(resolve(rootDir, 'nuxt.config.cjs'));
 
     const config = {
-        ...await import(resolve(rootDir, 'nuxt.config.cjs')),
-        mode: 'spa'
+        ...fileConfig,
+        mode: 'universal'
     };
 
     context.server = new Nuxt(config);
