@@ -2,7 +2,8 @@ console.log('Loading Nuxt Configuration file');
 
 module.exports = {
     rootDir: process.cwd(),
-    header: {
+    mode: 'universal',
+    head: {
         title: 'Podcastless',
         meta: [
             { charsert: 'utf-8' },
@@ -10,7 +11,7 @@ module.exports = {
             { hid: 'description', name: 'description', content: 'Podcasts to love' }
         ],
         link: [
-            { rel: 'icon', type: 'image/svg', href: '~assets/img/logo.svg' }
+            { rel: 'icon', type: 'image/svg', href: '/favicon.svg' }
         ]
     },
     build: {
