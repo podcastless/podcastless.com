@@ -43,6 +43,7 @@ jobs:
       - run: npm start -- generate
         env:
           CI: true
+      - run: cp CNAME dist/CNAME
       - uses: JamesIves/github-pages-deploy-action@releases/v3
         if: success()
         with:
