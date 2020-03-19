@@ -43,9 +43,9 @@ jobs:
       - run: npm start -- generate
         env:
           CI: true
-      - uses: tsunematsu21/actions-publish-gh-pages@v1.0.0
+      - uses: JamesIves/github-pages-deploy-action@releases/v3
         if: success()
         with:
-          dir: dist
-          branch: gh-pages
-          token: ${{ secrets.GH_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
