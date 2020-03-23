@@ -2,29 +2,45 @@ console.log('Loading Nuxt Configuration file');
 
 module.exports = {
     rootDir: process.cwd(),
-    mode: 'universal',
+    mode: 'spa',
     head: {
         title: 'Podcastless',
-        meta: [
-            { charsert: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: 'Podcasts to love' }
+        meta: [{
+                charsert: 'utf-8'
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1'
+            },
+            {
+                hid: 'description',
+                name: 'description',
+                content: 'Podcasts to love'
+            }
         ],
-        link: [
-            { rel: 'icon', type: 'image/svg', href: '/favicon.svg' }
-        ]
+        link: [{
+            rel: 'icon',
+            type: 'image/svg',
+            href: '/favicon.svg'
+        }]
     },
     build: {
-        extend(config, {
-            isClient
-        }) {
-            config.devtool = isClient ?
-                'source-map' :
-                'inline-source-map';
+        extend(config, context) {
+            // Run ESLint on save
+            if (context.isDev) {
+                if (context.isClient) {
+                    console.log('devtool = source-map');
+                    config.devtool = 'source-map'
+                } else {
+                    console.log('devtool = inline-source-map');
+                    config.devtool = 'inline-source-map'
+                }
+            }
         }
     },
     modules: [
-        'nuxt-fontawesome'
+        'nuxt-fontawesome',
+        '@nuxtjs/axios'
     ],
     fontawesome: {
         component: 'fa',
