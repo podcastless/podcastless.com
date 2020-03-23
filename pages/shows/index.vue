@@ -1,5 +1,5 @@
 <template>
     <main>
-        Home here!
+        Show list here!
     </main>
 </template>
