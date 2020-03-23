@@ -1,0 +1,16 @@
+[
+  {
+    "id": "zonabool",
+    "name": "ZonaBool",
+    "description": "",
+    "latestEpisodes": [
+      {
+        "id": 1,
+        "title": "Pilot",
+        "season": 3,
+        "episode": 1,
+        "description": ""
+      }
+    ]
+  }
+]
