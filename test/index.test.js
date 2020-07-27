@@ -25,16 +25,21 @@ test.before(async ({ context }) => {
 
 test('Route / exits and render HTML', async ({ context, true: isTrue }) => {
     const { html } = await context.server.renderRoute('/', context)
-    isTrue(html.includes('coming soon…'));
+    isTrue(html.includes('listen now'));
+    isTrue(html.includes('contact us'));
 });
 
 test('Route / exits and render HTML with CSS applied', async ({ context, is, not }) => {
     const { html } = await context.server.renderRoute('/', context);
     const { window } = new JSDOM(html).window;
 
-    const element = window.document.querySelector('h1');
-    not(element, null);
-    is(element.textContent, 'coming soon…');
+    const ctaHeader = window.document.querySelector('h1');
+    not(ctaHeader, null);
+    is(ctaHeader.textContent, 'listen now');
+
+    const contactHeading = window.document.querySelector('.contact');
+    not(contactHeading, null);
+    is(contactHeading.textContent, 'contact us');
 });
 
 test.after('Closing server and nuxt.js', ({ context }) => {
