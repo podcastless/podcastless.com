@@ -9,7 +9,7 @@
             <a target="_blank" href="https://podcasts.apple.com/co/podcast/podcastless/id1517750043"><fa :icon="['fab', 'itunes-note']" /></a>
         </nav>
         <h2 class="contact">contact us</h2>
-        <nav>
+        <nav class="contact">
             <a target="_blank" href="https://facebook.com/podcastless"><fa :icon="['fab', 'facebook']" /></a>
             <a target="_blank" href="https://instagram.com/podcastless"><fa :icon="['fab', 'instagram']" /></a>
             <a target="_blank" href="https://twitter.com/podcastless"><fa :icon="['fab', 'twitter']" /></a>
@@ -72,6 +72,10 @@ nav a {
     font-size: 1.75em;
     color: white;
     text-decoration: none;
+}
+
+nav.contact a {
+    font-size: 1.25em;
 }
 
 nav a:not(:last-child) {
